@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>    
+<head>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+</style>
+    <title>My Projects</title>
+</head>
+<body style="background-image: url('static/images/work_bg.png'); background-size: cover;background-position: center -200px; background-repeat: no-repeat;">
+<header style="background: transparent;width: 10;">
+    <div style="display: flex; gap: 40px; margin-left: 40px; margin-top: 50px;justify-content: flex-start; align-items: center;">
+    <h1 style="text-shadow: -8px 0px 10px white;"><a href="/profile" style="text-decoration: none; color:white;"><b>Profile</b></h1></a>
+    <a href="/" style="text-decoration: none; color:white;"><h1 style="text-shadow: -8px 0px 10px white;"><b>Home</b></h1></a>
+    <a href="/contacts" style="text-decoration: none; color:white;"><h1 style="text-shadow: -8px 0px 10px white;"><b>Contacts</b></h1></a>
+    </div> </header>
+<div style="padding: 50px; gap: 10px; text-align: center;">
+    <h1 style="color:gray; font-size: 90px;">WORKS</h1>
+    <h1 style="color:white;">Convert String to Uppercase</h1>
+
+    <form action="/works" method="post">
+        <input type="hidden" name="form_type" value="uppercase">
+        <label for="inputString" style="color:gray;">Enter a string:</label>
+        <input type="text" id="inputString" name="inputString">
+        <input type="submit" value="Convert">
+    </form>
+
+    {% if uppercase_result %}
+    <p style="color:gray; font-size: large; margin-top: 10px;">Converted string: {{ uppercase_result }}</p>
+    {% endif %}
+
+
+    <h1 style="color: maroon">Circle Calculator</h1>
+
+    <form action="/works" method="post">
+        <input type="hidden" name="form_type" value="circle">
+        <label for="radius" style="color: darkred">Enter a number:</label>
+        <input type="text" id="radius" name="radius">
+        <input type="submit" value="Compute">
+    </form>
+
+    {% if circle_result %}
+    <p style="color: darkred; margin-top: 10px; font-size: large;">Area of the Circle: {{ circle_result }}</p>
+    {% endif %}
+
+    <h1 style="color: rgb(200, 200, 31)">Triangle Calculator</h1>
+
+    <form action="/works" method="post">
+        <input type="hidden" name="form_type" value="triangle">
+        <label for="base" style="color: rgb(200, 200, 31)">Base:</label>
+        <input type="text" id="base" name="base" style="padding: 5px; margin-bottom: 10px;"><br>
+        
+        <label for="height" style="color: rgb(200, 200, 31)">Height:</label>
+        <input type="text" id="height" name="height" style="padding: 5px; margin-bottom: 10px;"><br>
+        <input type="submit" value="Compute">
+    </form>
+
+    {% if triangle_result %}
+    <p style="color: rgb(200, 200, 31); margin-top: 10px; font-size: large;">Area of the Triangle: {{ triangle_result }}</p>
+    {% endif %}
+
+    <h1 style="color: blue">Rectangle Calculator</h1>
+
+    <form action="/works" method="post">
+        <input type="hidden" name="form_type" value="rectangle">
+        <label for="width" style="color: blue">Width:</label>
+        <input type="text" id="width" name="width" style="padding: 5px; margin-bottom: 10px;"><br>
+
+        <input type="hidden" name="form_type" value="rectangle">
+        <label for="length" style="color: blue">Length:</label>
+        <input type="text" id="length" name="length" style="padding: 5px; margin-bottom: 10px;"><br>
+        <input type="submit" value="Compute">
+    </form>
+    {% if rectangle_result %}
+    <p style="color:blue; margin-top: 10px; font-size:large;">Area of the Rectangle: {{ rectangle_result }}</p>
+    {% endif %}
+
+
+</div>
+
+</body>
+</html>
